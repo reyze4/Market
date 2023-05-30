@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7c46f214a0b64654b888963ba40d719b" Name="Diagram1">
+        <EntityTypeShape EntityType="Rogozh_StoreModel.Client" Width="1.5" PointX="0.75" PointY="10.5" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.ClientService" Width="1.5" PointX="3" PointY="9.375" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.DocumentByService" Width="1.5" PointX="5.25" PointY="9.875" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.Gender" Width="1.5" PointX="1.5" PointY="15.625" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.Manufacturer" Width="1.5" PointX="0.75" PointY="2.625" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.Product" Width="1.5" PointX="3" PointY="1.875" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.ProductPhoto" Width="1.5" PointX="5.25" PointY="5.75" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.ProductSale" Width="1.5" PointX="5.25" PointY="2.375" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.RoleID" Width="1.5" PointX="3" PointY="13" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.Service" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.ServicePhoto" Width="1.5" PointX="3" PointY="18.5" />
+        <EntityTypeShape EntityType="Rogozh_StoreModel.Tag" Width="1.5" PointX="3" PointY="6.375" />
+        <AssociationConnector Association="Rogozh_StoreModel.FK_Client_Gender" />
+        <AssociationConnector Association="Rogozh_StoreModel.FK_ClientService_Client" />
+        <AssociationConnector Association="Rogozh_StoreModel.FK_RoleID_Client" />
+        <AssociationConnector Association="Rogozh_StoreModel.FK_ClientService_Service" />
+        <AssociationConnector Association="Rogozh_StoreModel.FK_DocumentByService_ClientService" />
+        <AssociationConnector Association="Rogozh_StoreModel.FK_ProductSale_ClientService" />
+        <AssociationConnector Association="Rogozh_StoreModel.FK_Product_Manufacturer" />
+        <AssociationConnector Association="Rogozh_StoreModel.FK_ProductPhoto_Product" />
+        <AssociationConnector Association="Rogozh_StoreModel.FK_ProductSale_Product" />
+        <AssociationConnector Association="Rogozh_StoreModel.FK_ServicePhoto_Service" />
+        <AssociationConnector Association="Rogozh_StoreModel.AttachedProduct" />
+        <AssociationConnector Association="Rogozh_StoreModel.TagOfClient" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
