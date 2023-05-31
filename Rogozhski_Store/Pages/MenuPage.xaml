@@ -50,30 +50,14 @@
                         <Image Source="/Resources/free-icon-home-1946436.png" 
                                HorizontalAlignment="Left"
                                Height="30"
-                               Margin="10 -30 0 0"/>
+                               Margin="10 -20 0 0"/>
 
-                        <TextBox
-                            FontFamily="Arial bLACK"
-                            FontSize="25"
-                            Foreground="Black"
-                            Margin="-20,5,435,35"
-                            BorderBrush="Transparent"
-                            HorizontalContentAlignment="Center"
-                            VerticalContentAlignment="Center">МЕНЮ</TextBox>
+                        <TextBlock Text="Меню" Margin="50 20 0 0" FontSize="30"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Top"/>
 
                         <Image gif:ImageBehavior.RepeatBehavior="3x"
                           gif:ImageBehavior.AnimatedSource="/Resources/logo_animation.gif" />
-
-                        <!--<MediaElement x:Name="loadingGif" Width="250" Height="100"
-                                      Source="/Resource/logo_animation.gif" 
-                                      HorizontalAlignment ="Center" Margin="275,0,115,0"
-                                      MediaOpened="loadingGif_MediaOpened"
-                                      MediaEnded="loadingGif_MediaEnded"
-                                      LoadedBehavior="Manual">
-                        </MediaElement>-->
-
-
-
                     </Grid>
                     <Border Grid.Row="1" Background="#FF9C27B0" CornerRadius="30">
                         <Grid >
