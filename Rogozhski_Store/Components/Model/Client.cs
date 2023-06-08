@@ -18,7 +18,7 @@ namespace Rogozhski_Store.Components.Model
         public Client()
         {
             this.ClientService = new HashSet<ClientService>();
-            this.Tag = new HashSet<Tag>();
+            this.DocumentsClient = new HashSet<DocumentsClient>();
         }
     
         public int ID { get; set; }
@@ -30,14 +30,14 @@ namespace Rogozhski_Store.Components.Model
         public string Email { get; set; }
         public string Phone { get; set; }
         public string GenderCode { get; set; }
-        public string PhotoPath { get; set; }
         public Nullable<int> RoleID { get; set; }
+        public byte[] PhotoPath { get; set; }
     
         public virtual Gender Gender { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientService> ClientService { get; set; }
-        public virtual RoleID RoleID1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tag> Tag { get; set; }
+        public virtual ICollection<DocumentsClient> DocumentsClient { get; set; }
+        public virtual RoleID RoleID1 { get; set; }
     }
 }

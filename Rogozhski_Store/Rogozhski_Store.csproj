@@ -194,7 +194,7 @@
     <Compile Include="Components\Model\ClientService.cs">
       <DependentUpon>Model1313.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\Model\DocumentByService.cs">
+    <Compile Include="Components\Model\DocumentsClient.cs">
       <DependentUpon>Model1313.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\Model\Gender.cs">
@@ -202,21 +202,6 @@
     </Compile>
     <Compile Include="Components\Model\Manufacturer.cs">
       <DependentUpon>Model1313.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\Model\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\Model\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\Model\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Components\Model\Model1313.Context.cs">
       <AutoGen>True</AutoGen>
@@ -233,27 +218,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1313.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Components\Model\Product.cs">
-      <DependentUpon>Model1313.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\Model\ProductPhoto.cs">
-      <DependentUpon>Model1313.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\Model\ProductSale.cs">
-      <DependentUpon>Model1313.tt</DependentUpon>
-    </Compile>
     <Compile Include="Components\Model\RoleID.cs">
       <DependentUpon>Model1313.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\Model\Service.cs">
       <DependentUpon>Model1313.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\Model\ServicePhoto.cs">
+    <Compile Include="Components\Model\sysdiagrams.cs">
       <DependentUpon>Model1313.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\Model\Tag.cs">
-      <DependentUpon>Model1313.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Components\PartialClass\Client.cs" />
+    <Compile Include="Components\ValidatorExtensions.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -263,6 +238,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\CaptchaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DocumentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditAddDocsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -294,6 +277,12 @@
     <Compile Include="Pages\CaptchaPage.xaml.cs">
       <DependentUpon>CaptchaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DocumentsPage.xaml.cs">
+      <DependentUpon>DocumentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditAddDocsPage.xaml.cs">
+      <DependentUpon>EditAddDocsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EditAddPage.xaml.cs">
       <DependentUpon>EditAddPage.xaml</DependentUpon>
     </Compile>
@@ -323,13 +312,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Components\Model\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Components\Model\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
     <EntityDeploy Include="Components\Model\Model1313.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1313.Designer.cs</LastGenOutput>
@@ -349,9 +331,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Components\PartialClass\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Текст.png" />
     <Resource Include="Resources\Корзина.png" />
@@ -362,16 +342,6 @@
     <Resource Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Components\Model\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Components\Model\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Content Include="Components\Model\Model1313.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1313.edmx</DependentUpon>
@@ -382,6 +352,7 @@
       <DependentUpon>Model1313.edmx</DependentUpon>
       <LastGenOutput>Model1313.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\DEFOULT.png" />
     <None Include="Resources\8a04b375-f2c3-4e3c-9383-ee7582f57afe-transformed.png" />
     <Resource Include="Resources\free-icon-home-1946436.png" />
     <Resource Include="Resources\photo1680566756.jpeg" />

@@ -34,7 +34,7 @@ namespace Rogozhski_Store.Pages
 
         private void DocsBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new DocumentsPage());
         }
 
         private void EmployeesBtn_Click(object sender, RoutedEventArgs e)

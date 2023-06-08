@@ -1,0 +1,193 @@
+﻿<Page x:Class="Rogozhski_Store.Pages.DocumentsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Rogozhski_Store.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
+      mc:Ignorable="d" 
+      d:DesignHeight="485" d:DesignWidth="820"
+      Title="DocumentsPage" Background="Transparent">
+
+    <Border CornerRadius="30" Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="420"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="TopG" Grid.Row="0">
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <TextBox Margin="5 0 10 0"
+                         x:Name="SearchTb"
+                         TextChanged="SearchTb_TextChanged"
+                         materialDesign:HintAssist.Hint="Поиск"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         FontFamily="Comic Sans MS"
+                         Width="300"
+                         Height="40">
+                    </TextBox>
+
+                    <Button x:Name="AddBtn"
+                        Width="150"
+                        Height="35"
+                        Margin="5 0 0 0"
+                        Content="Добавить"
+                        Foreground="White"
+                        FontSize="15"
+                        Click="AddBtn_Click">
+                    </Button>
+
+                    <Button x:Name="BackBtn"
+                        Width="150"
+                        Height="35"
+                        Margin="5 0 0 0"
+                        Content="Назад"
+                        Foreground="White"
+                        FontSize="15"
+                        Click="BackBtn_Click">
+                    </Button>
+                    
+                </StackPanel>
+            </Grid>
+
+            <Border CornerRadius="30" Background="wHITE" Grid.Row="1">
+                <Grid x:Name="CenterG" Grid.Row="1">
+                    <ListView x:Name="DocumentsLV" Grid.Row="1" SelectionChanged="DocumentsLV_SelectionChanged">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#FF9C27B0"
+                            BorderThickness="2"
+                            Width="760"
+                            CornerRadius="15">
+                                    <Grid>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="170"></ColumnDefinition>
+                                            <ColumnDefinition Width="730"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"></RowDefinition>
+                                            <RowDefinition Height="40"></RowDefinition>
+                                            <RowDefinition Height="40"></RowDefinition>
+                                            <RowDefinition Height="60"></RowDefinition>
+                                        </Grid.RowDefinitions>
+
+                                        <Border Grid.Column="1" Grid.Row="0"
+                                        BorderBrush="#FF9C27B0"
+                                        BorderThickness="3"
+                                        Width="575"
+                                        HorizontalAlignment="Left"
+                                        CornerRadius="15"
+                                        Margin="5 5 0 0">
+                                            <TextBlock 
+                                                       Text="{Binding Title}"
+                                                       FontFamily="Comic Sans MS"
+                                                       Margin="10 0 0 0"
+                                                       FontSize="15">
+                                            </TextBlock>
+                                        </Border>
+
+
+                                        <Border Grid.Column="1"
+                                        Grid.Row="1"
+                                        BorderBrush="#FF9C27B0"
+                                        BorderThickness="3"
+                                        Width="575"
+                                        HorizontalAlignment="Left"
+                                        CornerRadius="15"
+                                        Margin="5 5 0 0">
+                                            <StackPanel Orientation="Horizontal"
+                                                Margin="10 0 0 0">
+                                                <TextBlock Text="{Binding RegistrationDate}"
+                                               FontFamily="Comic Sans MS"
+                                               FontSize="15">
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <Border BorderBrush="#FF9C27B0"
+                                        BorderThickness="3"
+                                        Width="575"
+                                        HorizontalAlignment="Left"
+                                        CornerRadius="15"
+                                        Margin="5 5 0 0"
+                                        Grid.Column="1"
+                                        Grid.Row="2">
+                                            <StackPanel HorizontalAlignment="Left">
+
+                                                <TextBlock Text="{Binding SeriesPassport}"
+                                               FontFamily="Comic Sans MS"
+                                               FontSize="15"
+                                               Margin="10 0 0 0">
+                                                </TextBlock>
+
+                                            </StackPanel>
+                                        </Border>
+
+                                        <StackPanel Orientation="Horizontal"
+                                            Grid.Column="1"
+                                            Grid.Row="3">
+
+                                            <Border 
+                                            BorderBrush="#FF9C27B0"
+                                            BorderThickness="3"
+                                            HorizontalAlignment="Left"
+                                            CornerRadius="15"
+                                            Margin="5 5 0 5"
+                                            Width="200">
+                                                <TextBlock Text="{Binding NumberPassport}"
+                                               FontFamily="Comic Sans MS"
+                                               FontSize="15"
+                                               Margin="10 0 0 0"
+                                               >
+                                                </TextBlock>
+                                            </Border>
+
+                                            <Button x:Name="EditBtn" Click="EditBtn_Click"
+                                            Content="Редактировать"
+                                            Margin="10 0 10 0"
+                                            Foreground="#FFFFFFFF">
+                                            </Button>
+                                            <Button x:Name="DeleteBtn" Click="DeleteBtn_Click"
+                                            Content="Удалить"
+                                            Foreground="#FFFFFFFF">
+                                            </Button>
+                                        </StackPanel>
+
+
+
+                                        <Border Grid.Column="0" Grid.RowSpan="4" Background="Transparent"
+                                        BorderBrush="#FF9C27B0"
+                                        BorderThickness="3"
+                                        Height="150"
+                                        Width="150"
+                                        Margin="10 0 0 0"
+                                        CornerRadius="15">
+                                            <Grid Grid.RowSpan="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                                <Image Source="/Resources/DEFOULT.png" 
+                                           Grid.Column="0" Grid.RowSpan="4"
+                                           Width="100" RenderOptions.BitmapScalingMode="Fant"
+                                           Height="110"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                                                <Image Grid.Column="0" Grid.RowSpan="4"
+                                           Width="130"
+                                           Height="130"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center" RenderOptions.BitmapScalingMode="Fant"
+                                           Source="{Binding Client.PhotoPath}" Panel.ZIndex="333"></Image>
+                                            </Grid>
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Page>

@@ -25,7 +25,7 @@ namespace Rogozhski_Store.Pages
             InitializeComponent();
         }
 
-             private static Random rnd = new Random();
+        private static Random rnd = new Random();
         private static int countsymbol = 6;
         private static string Capcha = "";
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,7 +36,7 @@ namespace Rogozhski_Store.Pages
         }
         public void GenerateSymbol()
         {
-            string alp = "1234567890ABCDEFGHIJKLMNOP";
+            string alp = "1234567890ABCDEFGHIJKLMNOPqwertyuiopasdfghjklzxcvbnm~!@#$%^&*";
             for (int i = 0; i < countsymbol; i++)
             {
                 string symbol = alp.ElementAt(rnd.Next(0, alp.Length)).ToString();
@@ -117,5 +117,5 @@ namespace Rogozhski_Store.Pages
         {
             NavigationService.GoBack();
         }
-    }   
+    }
 }

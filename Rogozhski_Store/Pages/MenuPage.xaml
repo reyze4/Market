@@ -71,16 +71,28 @@
                                     Background="White"
                                     CornerRadius="15"
                                     Margin="0 0 10 0">
+                                    <TextBox FontSize="15">
+                                        gfghhgghh
+                                    </TextBox>
+                                
                             </Border>
                             <Border Height="300" Width="200"
                                     Background="White"
                                     CornerRadius="15"
                                     Margin="0 0 10 0">
-                            </Border>
+                                    <TextBox FontSize="15">
+                                          tyutu
+                                    </TextBox>
+
+                                </Border>
                             <Border Height="300" Width="200"
                                     Background="White"
                                     CornerRadius="15">
-                            </Border>
+                                    <TextBox FontSize="15">
+                                        tuutututu
+                                    </TextBox>
+
+                                </Border>
 
                         </StackPanel>
                     </Grid>

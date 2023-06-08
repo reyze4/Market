@@ -18,7 +18,6 @@ namespace Rogozhski_Store.Components.Model
         public Service()
         {
             this.ClientService = new HashSet<ClientService>();
-            this.ServicePhoto = new HashSet<ServicePhoto>();
         }
     
         public int ID { get; set; }
@@ -28,10 +27,9 @@ namespace Rogozhski_Store.Components.Model
         public string Description { get; set; }
         public Nullable<double> Discount { get; set; }
         public byte[] MainImagePath { get; set; }
+        public Nullable<int> Manufacturer { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientService> ClientService { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ServicePhoto> ServicePhoto { get; set; }
     }
 }

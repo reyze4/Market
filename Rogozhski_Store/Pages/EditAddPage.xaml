@@ -4,142 +4,127 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Rogozhski_Store.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="485" d:DesignWidth="820"
       Title="EditAddPage">
 
     <Border CornerRadius="30" Background="White">
         <Grid>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="370"/>
-                <RowDefinition Height="35"/>
+                <RowDefinition Height="85"/>
+                <RowDefinition Height="400"/>
             </Grid.RowDefinitions>
 
-
-
-            <Rectangle Fill="#FF04A0FF"></Rectangle>
-
-            
+            <Grid Grid.Row="0">
+                <Image gif:ImageBehavior.RepeatBehavior="3x"
+                          gif:ImageBehavior.AnimatedSource="/Resources/logo_animation.gif" />
+            </Grid>
 
             <Grid Grid.Row="1" >
 
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Width="400">
 
-                        <TextBlock Text="Название"
-                           HorizontalAlignment="Left"
-                           FontSize="20"
-                           FontFamily="Arial Black"
-                           Foreground="#FF04A0FF"
-                           Margin="10 0 0 0"/>
-                        <TextBox Text="{Binding Title}"
+                        <TextBox Text="{Binding FirstName}"
                          HorizontalAlignment="Left"
+                         materialDesign:HintAssist.Hint="Имя"
                          Height="30"
+                         Width="390"
                          MaxLength="50"
                          Margin="10 0 0 10"
                          FontFamily="Comic Sans MS"
                          PreviewTextInput="TextBox_PreviewTextInput" />
 
-                        <TextBlock Text="Цена"
-                           HorizontalAlignment="Left"
-                           FontSize="20"
-                           FontFamily="Arial Black"
-                           Foreground="#FF04A0FF"
-                           Margin="10 0 0 0"/>
-                        <TextBox Text="{Binding Cost}"
+                        
+                        <TextBox Text="{Binding Birthday}"
                          Height="30"
-                         MaxLength="50"
+                         MaxLength="10"
+                         Width="390"
+                         materialDesign:HintAssist.Hint="Дата рождения"
                          HorizontalAlignment="Left"
                          Margin="10 0 0 10"
                          FontFamily="Comic Sans MS"
                          PreviewTextInput="TextBox_PreviewTextInput_1"/>
 
-                        <TextBlock Text="Время занятия в секундах"
-                           HorizontalAlignment="Left"
-                           FontSize="20"
-                           FontFamily="Arial Black"
-                           Foreground="#FF04A0FF"
-                           Margin="10 0 0 0"/>
-                        <TextBox Text="{Binding DirationInSeconds}"
+                       
+                        <TextBox Text="{Binding RegistrationDate}"
                          HorizontalAlignment="Left"
+                         materialDesign:HintAssist.Hint="Дата регистрации"
                          Height="30"
-                         MaxLength="11"
+                         Width="390"
+                         MaxLength="10"
                          Margin="10 0 0 10"
                          FontFamily="Comic Sans MS"
-                         PreviewTextInput="TextBox_PreviewTextInput_1"/>
+                         PreviewTextInput="TextBox_PreviewTextInput_2"/>
 
-                        <TextBlock Text="Описание"   
-                           HorizontalAlignment="Left"
-                           FontSize="20"
-                           FontFamily="Arial Black"
-                           Foreground="#FF04A0FF"
-                           Margin="10 0 0 0"/>
-                        <TextBox Text="{Binding Description}"
+                        
+                        <TextBox Text="{Binding Email}"
                          HorizontalAlignment="Left"
+                         Name="EmalTb"
+                         materialDesign:HintAssist.Hint="Почта"
                          Height="30"
+                         Width="390"
                          MaxLength="70"
                          Margin="10 0 0 10"
                          FontFamily="Comic Sans MS"
-                         PreviewTextInput="TextBox_PreviewTextInput"/>
+                         PreviewTextInput="TextBox_PreviewTextInput_3"/>
 
-                        <TextBlock Text="Скидка"
-                           HorizontalAlignment="Left"
-                           FontSize="20"
-                           FontFamily="Arial Black"
-                           Foreground="#FF04A0FF"
-                           Margin="10 0 0 0"/>
-                        <TextBox Text="{Binding Discount}"
+                        
+                        <TextBox Text="{Binding Phone}"
                          HorizontalAlignment="Left"
                          Height="30"
-                         MaxLength="7"
+                         Width="390"
+                         materialDesign:HintAssist.Hint="Номер телефона"
+                         MaxLength="11"
+                         PreviewTextInput="TextBox_PreviewTextInput_4"
                          Margin="10 0 0 0"
                          FontFamily="Comic Sans MS"/>
+
                         <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Left">
+
                             <Button x:Name="BSave"
-                    Content="Сохранить"
-                    Click="BSave_Click"
-                    Margin="10 15 0 0" 
-                    Foreground="#FF04A0FF"
-                    />
+                                    Content="Сохранить"
+                                    Click="BSave_Click"
+                                    Margin="10 15 0 0" 
+                                    Foreground="White"/>
 
                             <Button x:Name="BCancel"
-                    Content="Назад"
-                    Click="BCancel_Click"
-                    Margin="20 15 0 0"
-                    Foreground="#FF04A0FF"
-                    />
+                                    Content="Назад"
+                                    Click="BCancel_Click"
+                                    Margin="20 15 0 0"
+                                    Foreground="White"/>
+
                         </StackPanel>
                     </StackPanel>
+                    
                     <StackPanel Width="400" Orientation="Vertical"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center">
 
-                        <Border BorderBrush="#FF04A0FF"
+                        <Border BorderBrush="#FF9C27B0"
                             BorderThickness="3"
                             Width="315"
                             Height="305"
-                            CornerRadius="15">
+                            CornerRadius="15" >
                             <Image Height="280"
                                Width="300"
-                               Source="{Binding MainImagePath}" />
+                               Source="{Binding PhotoPath}" />
                         </Border>
 
                         <Button Name="EditImgBtn"
                         Click="EditImgBtn_Click"
                         Content="Изменить фото"
-                        Foreground="#FF04A0FF"
+                        Foreground="White"
                         Margin="0 10 0 0">
                         </Button>
                     </StackPanel>
+                    
                 </StackPanel>
             </Grid>
-
-            <Rectangle Grid.Row="2"
-                   Fill="#FF04A0FF">
-            </Rectangle>
         </Grid>
     </Border>
 </Page>
